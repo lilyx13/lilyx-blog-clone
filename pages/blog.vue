@@ -1,14 +1,11 @@
 <template>
 <div>
   <Header :pageInfo="siteInfo" />
-  <header>
-    <h1>Tech {{ siteInfo.pageName }}</h1>
-  </header>
-  <main>
-    <h2>A Loop of Cards</h2>
+  <main class="container mx-auto flex flex-wrap justify-items-center">
+    <h2 class="text-xl text-center">A Loop of Cards</h2>
     <Card v-for="topic in topics" :key="topic.id" :info="topic" />
     <section>
-      <h2>Topics</h2>
+      <h2 text-xl text-center>Topics</h2>
       <ul>
         <li v-for="(topic, index) in topics" :key="index">
           {{ index + 1 }} - {{ topic.title }}

@@ -1,6 +1,6 @@
 <template>
 <header>
-  <h1> {{ pageInfo.pageName }}</h1>
+  <h1 class="text-2xl text-center"> {{ pageInfo.pageName }}</h1>
 </header>
 </template>
 <script>
