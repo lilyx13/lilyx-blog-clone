@@ -1,1 +1,1 @@
-__NUXT_JSONP__("/labs", {data:[{_img:{}}],fetch:{},mutations:void 0});
+__NUXT_JSONP__("/labs", { data: [{ _img: {} }], fetch: {}, mutations: void 0 });
