@@ -6,7 +6,7 @@
     <section>
       <h2>Add a new Task</h2>
       <!-- Input fields -->
-      <form @submit="onSubmit">
+      <form @submit.prevent="addTodo">
         <!-- Todo Title Input -->
         <label for="todo-title">Todo Title</label>
         <input type="text" name="todo-title" v-model="todo.title" />
@@ -14,7 +14,7 @@
         <label for="todo-descript">Todo Description</label>
         <input type="text" name="todo-descript" v-model="todo.descript" />
         <!-- This can use v-on as well -->
-        <button @submit="addTodo">Add Item</button>
+        <button>Add Item</button>
       </form>
       <!-- Add a task -->
     </section>
@@ -52,14 +52,12 @@ export default {
     };
   },
   methods: {
-    addTodo: function (event) {
-      return this.todoItems.push({
-        title: "todo.title",
-        descript: "todo.descript",
-      });
-    },
-    onSubmit: function () {
+    addTodo: function () {
       console.log("submitting");
+      return this.todoItems.push({
+        title: this.todo.title,
+        descript: this.todo.descript,
+      });
     },
   },
 };
