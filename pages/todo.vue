@@ -4,17 +4,19 @@
       <h1>A Todo App</h1>
     </header>
     <section>
-      <h2>Add a new Task</h2>
       <!-- Input fields -->
-      <form @submit.prevent="addTodo">
-        <!-- Todo Title Input -->
-        <label for="todo-title">Todo Title</label>
-        <input type="text" name="todo-title" v-model="todo.title" />
-        <!-- Todo Description Input  -->
-        <label for="todo-descript">Todo Description</label>
-        <input type="text" name="todo-descript" v-model="todo.descript" />
-        <!-- This can use v-on as well -->
-        <button>Add Item</button>
+      <form @submit.prevent="addTodo"  class="container max-w-lg rounded shadow-lg border-solid border-2 p-8">
+        <fieldset class="flex flex-col">
+          <legend class="text-center"><h3>Add a new Task</h3></legend>
+          <!-- Todo Title Input -->
+          <label for="todo-title">Todo Title</label>
+          <input type="text" name="todo-title" v-model="todo.title" />
+          <!-- Todo Description Input  -->
+          <label for="todo-descript">Todo Description</label>
+          <input type="text" name="todo-descript" v-model="todo.descript" />
+          <!-- This can use v-on as well -->
+          <button>Add Item</button>
+        </fieldset>
       </form>
       <!-- Add a task -->
     </section>
@@ -62,3 +64,14 @@ export default {
   },
 };
 </script>
+<style lang="postcss" scoped>
+  label {
+    @apply font-semibold mt-3
+  }
+  input[type=text] {
+    @apply border-solid border-2 rounded-sm my-2 p-1
+  }
+  button {
+    @apply bg-green-600 hover:bg-green-800 text-white py-2 w-40 mx-auto mt-4 justify-self-end
+  }
+</style>
