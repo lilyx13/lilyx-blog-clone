@@ -1,11 +1,14 @@
 <template>
-  <div>
-    <header>
-      <h1>A Todo App</h1>
+  <div class="container mx-auto">
+    <header class="container max-w-lg mx-auto py-4">
+      <h1 class="text-center">A Todo App</h1>
     </header>
-    <section>
+    <section class="container max-w-lg mx-auto">
       <!-- Input fields -->
-      <form @submit.prevent="addTodo"  class="container max-w-lg rounded shadow-lg border-solid border-2 p-8">
+      <form
+        @submit.prevent="addTodo"
+        class="container max-w-lg rounded shadow-lg border-solid border-2 p-8"
+      >
         <fieldset class="flex flex-col">
           <legend class="text-center"><h3>Add a new Task</h3></legend>
           <!-- Todo Title Input -->
@@ -20,13 +23,17 @@
       </form>
       <!-- Add a task -->
     </section>
-    <section>
-      <h2>Today's Tasks</h2>
+    <section class="container max-w-lg mx-auto pt-8">
+      <h2 class="text-center">Today's Tasks</h2>
       <div>
-        <ul>
-          <li v-for="todo in todoItems" :key="todo.id">
-            <h3>{{ todo.title }}</h3>
-            <p>{{ todo.descript }}</p>
+        <ul class="container max-w-lg">
+          <li
+            v-for="todo in todoItems"
+            :key="todo.id"
+            class="border-solid border-2 my-4"
+          >
+            <h3 class="bg-gray-200 px-4">{{ todo.title }}</h3>
+            <p class="p-4">{{ todo.descript }}</p>
           </li>
         </ul>
       </div>
@@ -65,13 +72,13 @@ export default {
 };
 </script>
 <style lang="postcss" scoped>
-  label {
-    @apply font-semibold mt-3
-  }
-  input[type=text] {
-    @apply border-solid border-2 rounded-sm my-2 p-1
-  }
-  button {
-    @apply bg-green-600 hover:bg-green-800 text-white py-2 w-40 mx-auto mt-4 justify-self-end
-  }
+label {
+  @apply font-semibold mt-3;
+}
+input[type="text"] {
+  @apply border-solid border-2 rounded-sm my-2 p-1;
+}
+button {
+  @apply bg-green-600 hover:bg-green-800 text-white py-2 w-40 mx-auto mt-4 justify-self-end;
+}
 </style>
