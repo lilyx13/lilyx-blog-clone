@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   purge: [],
@@ -269,8 +270,7 @@ module.exports = {
         "Cambria",
         '"Times New Roman"',
         "Times",
-        "serif",
-      ],
+        "serif",      ],
       mono: [
         "ui-monospace",
         "SFMono-Regular",
@@ -281,6 +281,13 @@ module.exports = {
         '"Courier New"',
         "monospace",
       ],
+    },
+    extend: {
+      fontFamily: {
+        "bebas_neue": ["Bebas Neue"],
+        "montserrat": ["Montserrat"],
+        "source_code_pro": ["Source Code Pro"]
+      }
     },
     fontSize: {
       xs: ["0.75rem", { lineHeight: "1rem" }],
@@ -1030,5 +1037,18 @@ module.exports = {
     wordBreak: ["responsive"],
     zIndex: ["responsive", "focus-within", "focus"],
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addBase, theme }) {
+      addBase({
+        'h1': { fontSize: theme('fontSize.4xl'), fontFamily:theme('fontFamily.sans.Bebas_Neue') },
+        'h2': { fontSize: theme('fontSize.3xl'), fontFamily: theme('extend.montserrat'), fontWeight: theme('fontWeight.bold')},
+        'h3': { fontSize: theme('fontSize.2xl'), fontFamily: theme('extend.montserrat'), fontWeight: theme('fontWeight.semibold') },
+        'h4': { fontSize: theme('fontSize.xl'), fontFamily: theme('extend.fontFamily.montserrat'), fontWeight: theme('fontWeight.semibold') },
+        'button': { fontSize: theme('fontSize.lg'), fontFamily: theme('extend.fontFamily.montserrat'), },
+        'p': { fontSize: theme('fontSize.base'), fontFamily: theme('extend.fontFamily.montserrat'), fontWeight: theme('fontWeight.regular') },
+        'a': { fontSize: theme('fontSize.base'), fontFamily: theme('extend.fontFamily.montserrat'), fontWeight: theme('fontWeight.regular') },
+        'li': { fontSize: theme('fontSize.base'), fontFamily: theme('extend.fontFamily.montserrat'), fontWeight: theme('fontWeight.regular') },
+      })
+    })
+  ]
 };

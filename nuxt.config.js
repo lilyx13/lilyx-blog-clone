@@ -37,7 +37,8 @@ export default {
   googleFonts: {
     families: {
       'Bebas+Neue': true,
-      Montserrat: [300, 400, 600, 700]
+      Montserrat: [300, 400, 600, 700],
+      'Source+Code+Pro': true
     },
     preconnect: true
   },
