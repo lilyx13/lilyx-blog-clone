@@ -32,11 +32,33 @@ export default {
     "@nuxtjs/tailwindcss",
     "@nuxtjs/style-resources",
     "@nuxt/image",
-      // Simple usage
     '@nuxtjs/google-fonts'
   ],
+  googleFonts: {
+    families: {
+      'Bebas+Neue': true,
+      Montserrat: [300, 400, 600, 700]
+    },
+    preconnect: true
+  },
+  image: {
+    // The screen sizes predefined by `@nuxt/image`:
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536
+    }
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxt/content"],
+  modules: [
+    // https://content.nuxtjs.org/themes/docs/
+    "@nuxt/content",
+    // https://github.com/nuxt-community/markdownit-module
+    '@nuxtjs/markdownit'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
