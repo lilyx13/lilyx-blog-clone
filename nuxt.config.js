@@ -31,11 +31,13 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
     "@nuxtjs/style-resources",
-    "@nuxt/image"
+    "@nuxt/image",
+      // Simple usage
+    '@nuxtjs/google-fonts'
   ],
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ["@nuxt/content"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-};
+}
