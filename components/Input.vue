@@ -1,13 +1,16 @@
 <template>
-  <div>
-    <label for="todo-title">Todo Title</label>
-    <input type="text" />
-  </div>
+  <label :for="inputInfo.inputName"
+    >{{ inputInfo.labelText }}
+    <input
+      type="text"
+      :value="value"
+      @input="$emit('input', $event.target.value)"
+      :name="inputInfo.inputName"
+    />
+  </label>
 </template>
 <script>
 export default {
-  props: {
-    inputData: String,
-  },
+  props: ["inputInfo", "value"],
 };
 </script>

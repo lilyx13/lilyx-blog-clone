@@ -21,7 +21,12 @@
           <button>Add Item</button>
         </fieldset>
       </form>
-      <!-- Add a task -->
+
+      <div>
+        <h2>Two Way Bound Component</h2>
+        <Input v-model="message.msg" :inputInfo="message" />
+        <p>{{ message.msg }}</p>
+      </div>
     </section>
     <section class="container max-w-lg mx-auto pt-8">
       <h2 class="text-center">Today's Tasks</h2>
@@ -40,29 +45,26 @@
     </section>
   </div>
 </template>
+
 <script>
 export default {
   data() {
     return {
+      message: {
+        msg: "",
+        labelText: "This is label",
+        inputName: "test-input",
+      },
       todo: {
         title: "",
         descript: "",
       },
-      todoItems: [
-        {
-          title: "Test One",
-          descript: "Descript one",
-        },
-        {
-          title: "Test Two",
-          descript: "Descript two",
-        },
-      ],
+      todoItems: [],
     };
   },
   methods: {
     addTodo: function () {
-      console.log("submitting");
+      console.log(this.todo);
       return this.todoItems.push({
         title: this.todo.title,
         descript: this.todo.descript,
