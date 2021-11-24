@@ -1,40 +1,13 @@
 <template>
   <div class="container mx-auto">
-    <header class="container max-w-lg mx-auto py-4">
-      <h1 class="text-center">A Todo App</h1>
-    </header>
+    <Header :pageInfo="appInfo" />
+    <!-- Form Input -->
     <section class="container max-w-lg mx-auto">
-      <!-- Input fields -->
-      <form
-        @submit.prevent="addTodo"
-        class="container max-w-lg rounded shadow-lg border-solid border-2 p-8"
-      >
-        <fieldset class="flex flex-col">
-          <legend class="text-center"><h3>Add a new Task</h3></legend>
-          <!-- Todo Title Input -->
-          <label for="todo-title">Todo Title</label>
-          <input type="text" name="todo-title" v-model="todo.title" />
-          <!-- Todo Description Input  -->
-          <label for="todo-descript">Todo Description</label>
-          <input type="text" name="todo-descript" v-model="todo.descript" />
-          <!-- This can use v-on as well -->
-          <button>Add Item</button>
-        </fieldset>
-      </form>
-    <section class="container max-w-lg mx-auto pt-8">
-      <h2 class="text-center">Today's Tasks</h2>
-      <div>
-        <ul class="container max-w-lg">
-          <li
-            v-for="todo in todoItems"
-            :key="todo.id"
-            class="border-solid border-2 my-4"
-          >
-            <h3 class="bg-gray-200 px-4">{{ todo.title }}</h3>
-            <p class="p-4">{{ todo.descript }}</p>
-          </li>
-        </ul>
-      </div>
+      <TodoForm />
+    </section>
+    <!-- Input fields -->
+    <section>
+      <TaskList />
     </section>
   </div>
 </template>
@@ -43,21 +16,11 @@
 export default {
   data() {
     return {
-      todo: {
-        title: "",
-        descript: "",
+      appInfo: {
+        title: "A Todo App",
+        description: "Organize Your Life.",
       },
-      todoItems: [],
     };
-  },
-  methods: {
-    addTodo: function () {
-      console.log(this.todo);
-      return this.todoItems.push({
-        title: this.todo.title,
-        descript: this.todo.descript,
-      });
-    },
   },
 };
 </script>
