@@ -21,13 +21,6 @@
           <button>Add Item</button>
         </fieldset>
       </form>
-
-      <div>
-        <h2>Two Way Bound Component</h2>
-        <Input v-model="message.msg" :inputInfo="message" />
-        <p>{{ message.msg }}</p>
-      </div>
-    </section>
     <section class="container max-w-lg mx-auto pt-8">
       <h2 class="text-center">Today's Tasks</h2>
       <div>
@@ -50,11 +43,6 @@
 export default {
   data() {
     return {
-      message: {
-        msg: "",
-        labelText: "This is label",
-        inputName: "test-input",
-      },
       todo: {
         title: "",
         descript: "",

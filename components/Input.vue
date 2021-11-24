@@ -1,9 +1,9 @@
 <template>
-  <label :for="inputInfo.inputName"
+  <label :for="inputInfo.inputName" class="flex flex-col"
     >{{ inputInfo.labelText }}
     <input
       type="text"
-      :value="value"
+      :value="message"
       @input="$emit('input', $event.target.value)"
       :name="inputInfo.inputName"
     />
@@ -11,6 +11,6 @@
 </template>
 <script>
 export default {
-  props: ["inputInfo", "value"],
+  props: ["inputInfo", "message"],
 };
 </script>
