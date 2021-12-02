@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl font-body font-bold;
+  }
+  p {
+    @apply text-xl font-body;
+  }
+}
+
+@layer utilities {
+  .flex-container-col {
+    display: flex;
+    flex-direction: column;
+  } 
+}
+
+@layer components {
+  .btn {
+    @apply 
+    font-bold
+    uppercase
+    text-xs
+    px-4
+    py-2
+    rounded-full
+    shadow
+    hover:shadow-md
+    outline-none
+    focus:outline-none
+    mr-1
+    mb-1
+    ease-linear
+    transition-all
+    duration-150
+  }
+  .btn-purple {
+    @apply bg-purple-500 hover:bg-purple-600 text-white;
+  }
+}

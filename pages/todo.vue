@@ -2,12 +2,13 @@
   <div class="container mx-auto">
     <Header :pageInfo="appInfo" />
     <!-- Form Input -->
-    <section class="container max-w-lg mx-auto">
-      <TodoForm />
+    <section class="flex-container">
+      <TodoForm @form-submitted="handleFormData" :todo="todoData" />
+      <a class="btn btn-purple">test</a>
     </section>
     <!-- Input fields -->
     <section>
-      <TaskList />
+      <TaskList :todoTasks="formData" />
     </section>
   </div>
 </template>
@@ -20,7 +21,17 @@ export default {
         title: "A Todo App",
         description: "Organize Your Life.",
       },
+      todoData: {
+        title: "",
+        description: "",
+      },
+      formData: [],
     };
+  },
+  methods: {
+    handleFormData(dataFromChild) {
+      this.formData.push(dataFromChild);
+    },
   },
 };
 </script>

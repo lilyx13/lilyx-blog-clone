@@ -249,7 +249,6 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        "montserrat",
         "system-ui",
         "-apple-system",
         "BlinkMacSystemFont",
@@ -281,8 +280,12 @@ module.exports = {
         '"Courier New"',
         "monospace",
       ],
-      'montserrat': ['montserrat', 'sans-serif'],
-      'bebas': ['Bebas+Neue', 'sans-serif']
+    },
+    extend: {
+      fontFamily: {
+        body: ['montserrat', 'sans-serif'],
+        title: ['serif']
+      }
     },
     fontSize: {
       xs: ["0.75rem", { lineHeight: "1rem" }],
@@ -1032,6 +1035,7 @@ module.exports = {
     wordBreak: ["responsive"],
     zIndex: ["responsive", "focus-within", "focus"],
   },
+  /*
   plugins: [
     plugin(function({ addBase, theme }) {
       addBase({
@@ -1046,4 +1050,5 @@ module.exports = {
       })
     })
   ]
+  */
 };

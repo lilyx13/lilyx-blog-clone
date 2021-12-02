@@ -1,5 +1,8 @@
-<template lang="pug">
-<Nuxt />
+<template>
+<div>
+  <Nuxt />
+  <Footer />
+</div>
 </template>
 <script>
 export default {};
